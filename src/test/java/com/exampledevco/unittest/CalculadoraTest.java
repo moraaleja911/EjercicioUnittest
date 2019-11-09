@@ -42,28 +42,27 @@ public class CalculadoraTest {
 
     @Test
     public void cuandoIngresaNegativoEntoncesRetornaMensaje(){
-        // Mockito.doReturn("V").when(calculadora.construirRomano(Mockito.anyInt()));
         Mockito.when(calculadora.construirRomano(Mockito.anyInt())).thenReturn("No se puede convertir a Romano");
         String respuesta=calculadora.calcular(-1);
         assertThat(respuesta,equalTo("No se puede convertir a Romano"));
     }
+
     @Test
     public void cuandoIngresa0EntoncesRetornaNihil(){
-        // Mockito.doReturn("V").when(calculadora.construirRomano(Mockito.anyInt()));
         Mockito.when(calculadora.construirRomano(Mockito.anyInt())).thenReturn("No existe símbolo Romano - Nihil");
         String respuesta=calculadora.calcular(0);
         assertThat(respuesta,equalTo("No existe símbolo Romano - Nihil"));
     }
+
     @Test
     public void cuandoIngresa4000EntoncesRetornaIV(){
-        // Mockito.doReturn("V").when(calculadora.construirRomano(Mockito.anyInt()));
         Mockito.when(calculadora.construirRomano(Mockito.anyInt())).thenReturn("¯IV¯ -> Línea horizontal superior");
         String respuesta=calculadora.calcular(4000);
         assertThat(respuesta,equalTo("¯IV¯ -> Línea horizontal superior"));
     }
+
     @Test
     public void cuandoIngresa4000000EntoncesRetornaIV(){
-        // Mockito.doReturn("V").when(calculadora.construirRomano(Mockito.anyInt()));
         Mockito.when(calculadora.construirRomano(Mockito.anyInt())).thenReturn("═IV═ -> Doble línea horizontal superior");
         String respuesta=calculadora.calcular(4000000);
         assertThat(respuesta,equalTo("═IV═ -> Doble línea horizontal superior"));
